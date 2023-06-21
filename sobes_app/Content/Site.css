@@ -22,3 +22,97 @@ select,
 textarea {
     max-width: 280px;
 }
+/*---------------------------------------------------------------------------*/
+.button-submit {
+    font-family: 'Ubuntu', sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 170px;
+    height: 40px;
+    line-height: 1;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border: 3px solid #8C82FC;
+    background: #fff;
+    color: #8C82FC;
+    border-radius: 40px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all .35s;
+}
+
+.button-submit:hover {
+    background: #8C82FC;
+    color: #fff;
+}
+
+    .button-submit span {
+        opacity: 1;
+        visibility: visible;
+        transition: all .35s;
+    }
+
+
+
+.button-submit.is_active {
+    width: 40px;
+    height: 40px;
+}
+
+    .button-submit.is_active .success {
+        opacity: 1;
+        visibility: visible;
+    }
+
+        .button-submit.is_active .success svg {
+            margin-top: 50%;
+            transform: translateY(-50%) rotate(720deg) scale(1);
+        }
+
+    .button-submit.is_active span {
+        opacity: 0;
+        visibility: hidden;
+    }
+.select-list {
+    display: flex;
+    flex-direction: column;
+    position: static;
+    width: 200px;
+}
+.select-field {
+    display: flex;
+    justify-content:space-between;
+    width: 200px;
+}
+.select-field {
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+    color: #8C82FC;
+}
+    .select-field:hover {
+        background-color: #8C82FC;
+        color: white;
+    }
+
+body {
+font-size: 20px;
+font-weight:400;
+}
+.message {
+    color: #8C82FC;
+    width: fit-content;
+    border: 1px solid #8C82FC;
+    padding: 40px;
+    display: flex;
+    justify-items: center;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.container-options {
+    display: flex;
+    justify-content: center;
+}

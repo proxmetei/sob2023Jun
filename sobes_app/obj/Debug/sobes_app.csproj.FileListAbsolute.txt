@@ -79,8 +79,16 @@ C:\Users\Alex\source\repos\sobes_app\sobes_app\bin\ru\System.Web.Razor.resources
 C:\Users\Alex\source\repos\sobes_app\sobes_app\bin\ru\System.Web.WebPages.resources.dll
 C:\Users\Alex\source\repos\sobes_app\sobes_app\bin\ru\System.Web.WebPages.Deployment.resources.dll
 C:\Users\Alex\source\repos\sobes_app\sobes_app\bin\ru\System.Web.WebPages.Razor.resources.dll
-C:\Users\Alex\source\repos\sobes_app\sobes_app\obj\Debug\sobes_app.csprojAssemblyReference.cache
 C:\Users\Alex\source\repos\sobes_app\sobes_app\obj\Debug\sobes_app.csproj.CoreCompileInputs.cache
 C:\Users\Alex\source\repos\sobes_app\sobes_app\obj\Debug\sobes_app.csproj.CopyComplete
 C:\Users\Alex\source\repos\sobes_app\sobes_app\obj\Debug\sobes_app.dll
 C:\Users\Alex\source\repos\sobes_app\sobes_app\obj\Debug\sobes_app.pdb
+C:\Users\Alex\source\repos\sobes_app\sobes_app\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Alex\source\repos\sobes_app\sobes_app\bin\Unity.Abstractions.dll
+C:\Users\Alex\source\repos\sobes_app\sobes_app\bin\Unity.Container.dll
+C:\Users\Alex\source\repos\sobes_app\sobes_app\bin\Unity.Mvc5.dll
+C:\Users\Alex\source\repos\sobes_app\sobes_app\bin\System.Threading.Tasks.Extensions.dll
+C:\Users\Alex\source\repos\sobes_app\sobes_app\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Alex\source\repos\sobes_app\sobes_app\bin\Unity.Abstractions.pdb
+C:\Users\Alex\source\repos\sobes_app\sobes_app\bin\Unity.Container.pdb
+C:\Users\Alex\source\repos\sobes_app\sobes_app\obj\Debug\sobes_app.csprojAssemblyReference.cache

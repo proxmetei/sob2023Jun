@@ -3,27 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using sobes_app.Models;
+using sobes_app.Repositories.OptionRepos;
 
 namespace sobes_app.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        private IOptionRepository repository;
+        public HomeController(IOptionRepository _repository)
         {
-            return View();
+            repository = _repository;
         }
-
-        public ActionResult About()
+        public ActionResult Index(Options options = Options.None)
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
+            ViewBag.Options = repository.Set(options);
+            ViewBag.Message = repository.GetChoiceStr();
             return View();
         }
     }

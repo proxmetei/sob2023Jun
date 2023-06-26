@@ -5,7 +5,7 @@
     <div class="message">@ViewBag.Message</div>
 </div>
 
-<div class="container-options">
+<form action="/Home/Index" method="post" class="container-options">
     <div class="form_label">
         <div id="select" class="select-list">
             @foreach (var option in Enum.GetValues(typeof(sobes_app.Models.Options)))
@@ -14,32 +14,15 @@
                 {
                     if ((((int)ViewBag.Options.Get()) & ((int)option)) == ((int)option))
                     {
-                        <div class="select-field"><input type="checkbox" class="select-field-input" name="vegetables" value="@((int)option)" checked><label class="select-field-label">@option</label></div>
+                        <div class="select-field"><input type="checkbox" name="@option" class="select-field-input" name="vegetables"  checked><label class="select-field-label">@option</label></div>
                     }
                     else
                     {
-                        <div class="select-field"><input type="checkbox" class="select-field-input" name="vegetables" value="@((int)option)"><label class="select-field-label">@option</label></div>
+                        <div class="select-field"><input type="checkbox" name="@option" class="select-field-input" name="vegetables" ><label class="select-field-label">@option</label></div>
                     }
                 }
             }
         </div>
     </div>
     <button id="submit" class="button-submit" type="submit">Submit</button>
-</div>
-<script>
-    $(document).ready(function () {
-        let selectedValue = 0;
-        $("input:checked").each(function () {
-            selectedValue += +this.value;
-        });
-        $("#submit").click(() => {
-            window.location.href = "/Home/Index/?options=" + selectedValue;
-        })
-        $("input:checkbox").click((e) => {
-            if (e.target.checked)
-                selectedValue += +e.target.value;
-            else
-                selectedValue -= +e.target.value;
-        })
-    });
-</script>
+</form>

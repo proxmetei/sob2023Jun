@@ -12,7 +12,7 @@
             {
                 if (((int)option) != 0)
                 {
-                    if ((((int)ViewBag.Options.Get()) & ((int)option)) == ((int)option))
+                    if ((((int)ViewBag.Options) & ((int)option)) == ((int)option))
                     {
                         <div class="select-field"><input type="checkbox" name="@option" class="select-field-input" name="vegetables"  checked><label class="select-field-label">@option</label></div>
                     }
@@ -22,6 +22,7 @@
                     }
                 }
             }
+            <div style="width: 285px;" class="select-field"><label>Message :</label><input name="Message" value="@ViewBag.Mes"></div>
         </div>
     </div>
     <button id="submit" class="button-submit" type="submit">Submit</button>

@@ -139,6 +139,7 @@
     </Compile>
     <Compile Include="Infrastructure\OptionModelBinder.cs" />
     <Compile Include="Models\OptionModel.cs" />
+    <Compile Include="Models\OptionsViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\OptionRepos\IOptionRepository.cs" />
     <Compile Include="Repositories\OptionRepos\OptionRepository.cs" />

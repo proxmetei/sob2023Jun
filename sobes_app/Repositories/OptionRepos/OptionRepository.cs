@@ -13,9 +13,9 @@ namespace sobes_app.Repositories.OptionRepos
         public OptionModel Get() {
             return this.model;
         }
-        public OptionModel Set(Options options)
+        public OptionModel Set(Options options, string message = "")
         {
-            this.model.Set(options);
+            this.model.Set(options, message);
             return this.model;
         }
         public string GetChoiceStr()

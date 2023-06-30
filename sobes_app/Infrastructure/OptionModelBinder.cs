@@ -8,7 +8,7 @@ using sobes_app.Models;
 namespace sobes_app.Infrastructure
 {
     //Start with class
-    public class OptionModelBinder : IModelBinder
+    public class OptionModelBinder : DefaultModelBinder
     {
         private readonly string _typeNameKey;
 
@@ -17,25 +17,29 @@ namespace sobes_app.Infrastructure
             _typeNameKey = typeNameKey ?? "__type__";
         }
 
-        public object BindModel
+        public override object BindModel
           (
             ControllerContext controllerContext,
             ModelBindingContext bindingContext
           )
         {
-            var providerResult = bindingContext.ValueProvider.GetValue(_typeNameKey);
-            if (providerResult != null)
-            {
-                var modelTypeName = providerResult.AttemptedValue;
+            Type type = bindingContext.ModelType;
+            var result =  base.BindModel(controllerContext, bindingContext);
+            var props = type.GetProperties();
+            foreach(var prop in props) { 
+                if(prop.PropertyType.BaseType == typeof(Enum) && Attribute.IsDefined(prop.PropertyType, typeof(FlagsAttribute)))
+                {
+                    var enumProp = Activator.CreateInstance(prop.PropertyType);
+                    foreach (var option in Enum.GetValues(prop.PropertyType))
+                    {
+                        if (GetValue(bindingContext, option.ToString()) == "on")
+
+                            enumProp = (int)enumProp | (int)option;
+                    }
+                    prop.SetValue(result, enumProp);
+                }
             }
-                var options = new Options();
-            List<string> opt = new List<string>(); 
-            foreach (var option in Enum.GetValues(typeof(sobes_app.Models.Options)))
-            {
-                if (GetValue(bindingContext, option.ToString()) != null)
-                    options = options | (Options)option;
-            }
-            return options;
+            return result;
         }
 
         private string GetValue(

@@ -15,9 +15,12 @@ namespace sobes_app.Controllers
         {
             repository = _repository;
         }
-        public ActionResult Index(Options options = Options.None)
+        public ActionResult Index(OptionsViewModel viewModel = null)
         {
-            ViewBag.Options = repository.Set(options);
+            Options options = viewModel == null ? Options.None : viewModel.options;
+            var model = repository.Set(options, viewModel==null? "":viewModel.Message);
+            ViewBag.Options = model.Get();
+            ViewBag.Mes = model.GetMessage();
             ViewBag.Message = repository.GetChoiceStr();
             return View();
         }

@@ -14,7 +14,7 @@ namespace sobes_app
     {
         protected void Application_Start()
         {
-            ModelBinders.Binders.Add(typeof(Options), new OptionModelBinder());
+            ModelBinders.Binders.Add(typeof(OptionsViewModel), new OptionModelBinder());
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

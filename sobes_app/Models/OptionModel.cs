@@ -24,6 +24,7 @@ namespace sobes_app.Models
     public class OptionModel
     {
         private Options options;
+        private string Message;
         public OptionModel()
         {
             options = Options.None;
@@ -32,13 +33,18 @@ namespace sobes_app.Models
         {
             this.options = options;
         }
-        public void Set(Options options)
+        public void Set(Options options = Options.None, string message = "")
         {
             this.options = options;
+            this.Message = message;
         }
         public Options Get()
         {
            return this.options;
+        }
+        public string GetMessage()
+        {
+            return this.Message;
         }
         public override string ToString() {
             int val = (int)this.options;

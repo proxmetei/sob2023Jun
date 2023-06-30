@@ -7,15 +7,28 @@ using sobes_app.Models;
 
 namespace sobes_app.Infrastructure
 {
+    //Start with class
     public class OptionModelBinder : IModelBinder
     {
+        private readonly string _typeNameKey;
+
+        public OptionModelBinder(string typeNameKey = null)
+        {
+            _typeNameKey = typeNameKey ?? "__type__";
+        }
+
         public object BindModel
           (
             ControllerContext controllerContext,
             ModelBindingContext bindingContext
           )
         {
-            var options = new Options();
+            var providerResult = bindingContext.ValueProvider.GetValue(_typeNameKey);
+            if (providerResult != null)
+            {
+                var modelTypeName = providerResult.AttemptedValue;
+            }
+                var options = new Options();
             List<string> opt = new List<string>(); 
             foreach (var option in Enum.GetValues(typeof(sobes_app.Models.Options)))
             {
